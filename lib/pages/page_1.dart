@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
           title: Text('E-Patrakaar',
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 25,
+              fontSize: 27,
               fontFamily: 'ElMessiri',
               color: Colors.black,
             ),),
