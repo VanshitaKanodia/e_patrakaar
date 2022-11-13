@@ -1,4 +1,5 @@
 class MyRoutes
 {
-  static String page_1 = '/home';
+  static String home_page = '/home';
+  static String notification_page = '/sound';
 }
