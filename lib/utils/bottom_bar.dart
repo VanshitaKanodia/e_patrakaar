@@ -1,5 +1,4 @@
 import 'package:e_patrakar/utils/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -69,14 +68,3 @@ class BottomBar extends StatelessWidget {
     );
   }
 }
-//
-// class BottomNavBar extends StatelessWidget {
-//   const BottomNavBar({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       bottomNavigationBar: BottomBar(index: 0),
-//     )
-//   }
-// }

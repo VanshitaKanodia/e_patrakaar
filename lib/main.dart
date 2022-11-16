@@ -1,4 +1,4 @@
-import 'package:e_patrakar/pages/Notification_page.dart';
+import 'package:e_patrakar/pages/notification_page.dart';
 import 'package:e_patrakar/pages/home_page.dart';
 import 'package:flutter/material.dart';
 

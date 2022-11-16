@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           elevation: 0.0,
-          title: Text('E-Patrakaar',
+          title: const Text('ePatrakaar',
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 24,
@@ -300,7 +300,7 @@ class BoxCategory3 extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.black38,
             ),
-          )
+          ),
         ],
       ),
     );
