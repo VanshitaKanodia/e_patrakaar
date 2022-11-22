@@ -1,4 +1,5 @@
 import 'package:e_patrakar/pages/notification_page.dart';
+import 'package:e_patrakar/pages/view_page.dart';
 import 'package:e_patrakar/pages/home_page.dart';
 import 'package:e_patrakar/pages/search_page.dart';
 import 'package:flutter/material.dart';
@@ -22,11 +23,12 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      initialRoute: '/search',
+      initialRoute: '/notify',
       routes: {
         '/home_page': (context) => HomePage(),
-        '/sound' : (context) => NotificationPage(),
+        '/sound' : (context) => Viewpage(),
         '/search' : (context) => SearchPage(),
+        '/notify' : (context) => NotificationPage(),
       }
     );
   }
