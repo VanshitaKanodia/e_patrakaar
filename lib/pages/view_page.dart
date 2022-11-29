@@ -168,15 +168,35 @@ class sportsWidget extends StatelessWidget {
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                     ),),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ...view.map((val) {
-                        return CircularBox();
-                      })
-                    ],
-                  ),
+                    Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          height: 100.0,
+                          child: ListView.builder(
+                            itemCount: 4,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index)
+                            {
+                              return CircularBox();
+                            },
+                          ),
+                        )
+                      ],
+                    )
+                ),
+                  // Row(
+                  //   crossAxisAlignment: CrossAxisAlignment.start,
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                      
+                  //     // ...view.map((val) {
+                  //     //   return CircularBox();
+                  //     // })
+                  //   ],
+                  // ),
                   SizedBox(height: 20.0,),
                   Text('Recommended Teams',
                     style: TextStyle(
