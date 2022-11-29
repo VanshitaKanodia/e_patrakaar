@@ -2,6 +2,7 @@ import 'package:e_patrakar/pages/notification_page.dart';
 import 'package:e_patrakar/pages/view_page.dart';
 import 'package:e_patrakar/pages/home_page.dart';
 import 'package:e_patrakar/pages/search_page.dart';
+import 'package:e_patrakar/utils/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,15 +22,17 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Color.fromARGB(255, 35, 6, 6)
       ),
-      initialRoute: '/notify',
-      routes: {
-        '/home_page': (context) => HomePage(),
-        '/sound' : (context) => Viewpage(),
-        '/search' : (context) => SearchPage(),
-        '/notify' : (context) => NotificationPage(),
-      }
+      home:const BottomBar()
+      //initialRoute: '/bottom',
+    //   routes: {
+    //     '/home_page': (context) => HomePage(),
+    //     '/sound' : (context) => Viewpage(),
+    //     '/search' : (context) => SearchPage(),
+    //     '/notify' : (context) => NotificationPage( ),
+    //     '/bottom' : (context) => BottomBar(),
+    //  }
     );
   }
 }

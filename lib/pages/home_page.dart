@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:e_patrakar/utils/card_state.dart';
 
@@ -169,15 +171,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-          ),
-          child: BottomBar(),
-        )
     );
   }
 }

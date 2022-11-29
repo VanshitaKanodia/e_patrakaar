@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 
@@ -32,59 +34,115 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ),
         ),
-        body: Container(
-          margin: EdgeInsets.only(top: 20.0),
-          padding: EdgeInsets.all(10),
-          child: Column(
-            children: [
-              TextFormField(
-                textAlign: TextAlign.start,
-                decoration: InputDecoration(
-                  labelText: 'Search news',
-                  labelStyle: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.black,
-                  ),
-                  fillColor: Colors.grey,
-                  border: InputBorder.none,
-                  filled: true,
-                  suffixIcon: Icon(Icons.search,
-                    color: Colors.white,
-                    size: 35,
+        body: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.only(top: 20.0),
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: [
+                TextFormField(
+                  textAlign: TextAlign.start,
+                  decoration: InputDecoration(
+                    labelText: 'Search news',
+                    labelStyle: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.black,
+                    ),
+                    fillColor: Colors.grey,
+                    border: InputBorder.none,
+                    filled: true,
+                    suffixIcon: Icon(Icons.search,
+                      color: Colors.white,
+                      size: 35,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 10.0,),
-              CityWidget(),
-              SizedBox(height: 10.0,),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
-                        children: [
-                          ExpandIcon(
-                            isExpanded: expandable,
-                            onPressed: (bool expanded) {
-                              setState(() {
-                                CityWidget();
-                                expandable = !expanded;
-                              });
+                SizedBox(height: 10.0,),
+                Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          height: 100.0,
+                          child: ListView.builder(
+                            itemCount: 4,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index)
+                            {
+                              return CityWidget();
                             },
                           ),
-                          Text(!expandable ? "View more" : " View less"),
-                        ],
-                      ),
-                    if(expandable)
-                      Row(
-                        children: [
-                          CityWidget(),
-                        ],
-                      )
-                  ],
+                        )
+                      ],
+                    )
                 ),
-              ),
-            ],
+                //SizedBox(height: 5.0,),
+                Container(
+                  child:Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ExpandIcon(
+                       isExpanded: expandable,
+                             onPressed: (bool expanded) {
+                                 setState(() {
+                                  expandable = !expanded;
+                               });
+                             },
+                           ),
+                      Text(!expandable ? "View more" : " View less"),
+                    ],
+                  ),
+                ),
+                //SizedBox(height:5.0),
+                !expandable?Container():Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          height: 100.0,
+                          child: ListView.builder(
+                            itemCount: 4,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index)
+                            {
+                              return CityWidget();
+                            },
+                          ),
+                        )
+                      ],
+                    )
+                ),
+                // Container(
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: [
+                //       Column(
+                //           children: [
+                //             ExpandIcon(
+                //               isExpanded: expandable,
+                //               onPressed: (bool expanded) {
+                //                 setState(() {
+                //                   CityWidget();
+                //                   expandable = !expanded;
+                //                 });
+                //               },
+                //             ),
+                //             Text(!expandable ? "View more" : " View less"),
+                //           ],
+                //         ),
+                //       if(expandable)
+                //         Row(
+                //           children: [
+                //             CityWidget(),
+                //           ],
+                //         )
+                //     ],
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ),
       ),
