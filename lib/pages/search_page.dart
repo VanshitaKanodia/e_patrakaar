@@ -38,21 +38,16 @@ class _SearchPageState extends State<SearchPage> {
           padding: EdgeInsets.all(10),
           child: Column(
             children: [
-              TextFormField(
-                textAlign: TextAlign.start,
+              TextField(
                 decoration: InputDecoration(
-                  labelText: 'Search news',
-                  labelStyle: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.black,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black12,
+                    ),
+                    borderRadius: BorderRadius.circular(40.0),
                   ),
-                  fillColor: Colors.grey,
-                  border: InputBorder.none,
-                  filled: true,
-                  suffixIcon: Icon(Icons.search,
-                    color: Colors.white,
-                    size: 35,
-                  ),
+                  hintText: "Search news",
+                  suffixIcon: ImageIcon(AssetImage('images/icons/search outline.png'))
                 ),
               ),
               SizedBox(height: 10.0,),

@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:e_patrakar/pages/view_page.dart';
 import 'package:flutter/material.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_patrakar/utils/card_state.dart';
-
-
 
 
 class HomePage extends StatefulWidget {
@@ -14,8 +14,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late int _currentIndex=0;
+  int _itemCount = 4;
 
-  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                         height: 165.0,
                         child: ListView.builder(
                           //length of items used
-                            itemCount: 4,
+                            itemCount: _itemCount,
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
@@ -63,23 +64,33 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: map<Widget>(cardList, (index, url) {
-                    return Container(
-                      width: 10.0,
-                      height: 10.0,
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 2.0),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: _currentIndex == index
-                            ? Colors.blueAccent
-                            : Colors.grey,
-                      ),
-                    );
-                  }),
+                    children: [
+                      for(int i = 0; i < _itemCount; i++)
+                        Container(
+                          margin: EdgeInsets.only(top: 10.0, right: 2),
+                            height: 10, width: 10,
+                            decoration: BoxDecoration(
+                                color: i == _currentIndex ? Colors.blueAccent : Colors.grey,
+                                borderRadius: BorderRadius.circular(5)
+                            )
+                        )
+                    ]
                 ),
+
+                // DotsIndicator(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   dotsCount: _itemCount,
+                //   position: _currentIndex.toDouble(),
+                //   decorator: DotsDecorator(
+                //       spacing: EdgeInsets.only(left: 2, right: 2),
+                //      color: Colors.grey,
+                //       activeColor: Colors.blueAccent,
+                // ),
+                // ),
+
                 SizedBox(height: 15.0),
 
                 Text('Viral Updates',

@@ -46,6 +46,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   carousel_slider: ^4.1.1
+  getwidget: ^3.0.1
+  dots_indicator: ^2.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

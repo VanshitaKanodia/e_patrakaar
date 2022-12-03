@@ -3,6 +3,8 @@ import 'package:e_patrakar/pages/view_page.dart';
 import 'package:e_patrakar/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/star_page.dart';
+
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -13,7 +15,7 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex=0;
-   var tabs=[HomePage(),ViewPage(),SearchPage(),ViewPage()];
+   var tabs=[HomePage(),ViewPage(),SearchPage(),StarPage()];
 
   @override
   Widget build(BuildContext context) {
