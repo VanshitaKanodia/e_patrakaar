@@ -12,7 +12,7 @@ List<int> data = [1,2,3,4];
 class _SearchPageState extends State<SearchPage> {
 
   String text = "View more";
-  bool expandable = false;
+  bool expandable = true;
 
   String get appText => "View less";
 
@@ -63,26 +63,22 @@ class _SearchPageState extends State<SearchPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
-                        children: [
-                          ExpandIcon(
-                            isExpanded: expandable,
-                            onPressed: (bool expanded) {
-                              setState(() {
-                                CityWidget();
-                                expandable = !expanded;
-                              });
-                            },
-                          ),
-                          Text(!expandable ? text : appText),
-                        ],
-                      ),
-                    SizedBox(height: 10,),
-                    if(expandable)
-                      Row(
-                        children: [
-
-                        ],
-                      )
+                      children: [
+                        Visibility(
+                          visible: expandable,
+                          child: CityWidget(),
+                        ),
+                        ExpandIcon(
+                          isExpanded: expandable,
+                          onPressed: (bool expanded) {
+                            setState(() {
+                              expandable = !expanded;
+                            });
+                          },
+                        ),
+                        Text(!expandable ? text : appText),
+                      ],
+                    ),
                   ],
                 ),
               ),
