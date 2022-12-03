@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 
 
-class Viewpage extends StatefulWidget {
-  const Viewpage({Key? key}) : super(key: key);
+class ViewPage extends StatefulWidget {
+  const ViewPage({Key? key}) : super(key: key);
 
   @override
-  State<Viewpage> createState() => _ViewpageState();
+  State<ViewPage> createState() => _ViewPageState();
 }
 
-class _ViewpageState extends State<Viewpage> with SingleTickerProviderStateMixin {
+class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin {
   final List<Tab> _tabList = [
     Tab(child: Text("Sports",
       style: TextStyle(
@@ -91,7 +91,7 @@ class _ViewpageState extends State<Viewpage> with SingleTickerProviderStateMixin
             children: [
               //Sports page
               Padding(
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(0.0),
                 child: Expanded(
                     child: sportsWidget()
                 ),
@@ -187,16 +187,6 @@ class sportsWidget extends StatelessWidget {
                       ],
                     )
                 ),
-                  // Row(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                      
-                  //     // ...view.map((val) {
-                  //     //   return CircularBox();
-                  //     // })
-                  //   ],
-                  // ),
                   SizedBox(height: 20.0,),
                   Text('Recommended Teams',
                     style: TextStyle(

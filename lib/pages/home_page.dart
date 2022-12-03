@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:e_patrakar/utils/card_state.dart';
 
-import '../utils/bottom_bar.dart';
 
 
 
@@ -48,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 5),
                         height: 165.0,
                         child: ListView.builder(
                           //length of items used
@@ -95,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          padding: EdgeInsets.symmetric(horizontal: 5),
                           height: 70.0,
                           child: ListView.builder(
                               itemCount: 10,
@@ -124,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
                         height: 200.0,
                         child: ListView.builder(
                           itemCount: 5,
@@ -152,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          padding: EdgeInsets.symmetric(horizontal: 5.0),
                           height: 100.0,
                           child: ListView.builder(
                             itemCount: 4,
@@ -226,7 +225,7 @@ class BoxCategory1 extends StatelessWidget {
             // Image.asset(''),
           ),
           Container(
-            width: 360.0,
+            width: 330.0,
             height: 165.0,
             decoration: BoxDecoration(
               color: Colors.black38,

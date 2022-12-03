@@ -1,10 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:e_patrakar/pages/home_page.dart';
-import 'package:e_patrakar/pages/notification_page.dart';
-import 'package:e_patrakar/pages/search_page.dart';
 import 'package:e_patrakar/pages/view_page.dart';
-import 'package:e_patrakar/utils/routes.dart';
+import 'package:e_patrakar/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,47 +13,49 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex=0;
-   var tabs=[HomePage(),NotificationPage(),SearchPage(),Viewpage()];
+   var tabs=[HomePage(),ViewPage(),SearchPage(),ViewPage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(child: tabs[_currentIndex]),
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 24,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: [
             BottomNavigationBarItem(
-            icon: Icon(Icons.home,
-            size:30.0
+            icon:ImageIcon(
+              AssetImage('images/icons/home filled.png',),
+              size: 24.0,
             ),
             backgroundColor: Colors.black,
-            label:"Home"
+            label: '',
+
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.notifications,
-              size:30.0
+              icon: ImageIcon(
+                AssetImage('images/icons/news outline.png',)
               ),
               backgroundColor: Colors.black,
-              label:"Notification"
+              label:""
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search,
-              size:30.0
-              ),
+              icon: ImageIcon(AssetImage('images/icons/search outline.png')),
               backgroundColor: Colors.black,
-              label:"Search"
+              label:""
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.star_border,
-              size:30.0
-              ),
+              icon: ImageIcon(AssetImage('images/icons/star filled.png')),
               backgroundColor: Colors.black,
-              label:"Star"
+              label:""
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person,
-              size:30.0
+              icon: ImageIcon(
+                AssetImage('images/icons/my account outline.png')
               ),
               backgroundColor: Colors.black,
-              label:"Profile"
+              label:""
             ),
           ],
           fixedColor: Colors.white,

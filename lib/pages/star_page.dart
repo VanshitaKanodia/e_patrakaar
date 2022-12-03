@@ -1,17 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:e_patrakar/utils/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 
-class NotificationPage extends StatefulWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+class StarPage extends StatefulWidget {
+  const StarPage({Key? key}) : super(key: key);
 
   @override
-  State<NotificationPage> createState() => _NotificationPageState();
+  State<StarPage> createState() => _StarPageState();
 }
 
-class _NotificationPageState extends State<NotificationPage> {
+class _StarPageState extends State<StarPage> {
   List<int> data = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,];
   @override
   Widget build(BuildContext context) {
