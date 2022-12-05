@@ -74,13 +74,85 @@ class _ProfileState extends State<Profile> {
               ),
               Container(
                 width:MediaQuery.of(context).size.width,
-                height: 2,
-                color: Colors.grey[600],
+                height: 1,
+                color: Colors.grey[500],
+              ),
+              SizedBox(
+                height:MediaQuery.of(context).size.height/20,
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                child:Text("Saved",
+                style:TextStyle(
+                  shadows: [
+                    Shadow(
+                      color:Colors.black,
+                      offset:Offset(0,-5)
+                    )
+                  ],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                  color:Colors.transparent,
+                  decoration:TextDecoration.underline,
+                  decorationThickness: 3.0,
+                  decorationColor: Colors.black
+                ))
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height/20,
+              ),
+              Container(
+                color: Colors.red,
+                height: MediaQuery.of(context).size.height,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 5.0),
+                          height: 100.0,
+                          child: ListView.builder(
+                            itemCount: 4,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemBuilder: (context, index)
+                            {
+                              return Rect();
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
               ),
             ],
           )  
         )
       ),
+    );
+  }
+}
+
+class Rect extends StatelessWidget {
+  const Rect({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 10.0),
+      child:Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height:40,
+            width:30,
+            color:Colors.grey
+          ),
+          SizedBox(
+            height:20.0
+          )
+
+      ],)
     );
   }
 }
