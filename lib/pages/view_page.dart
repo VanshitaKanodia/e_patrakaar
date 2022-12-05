@@ -107,7 +107,7 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
 
               //Entertainment page
               Padding(
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(8.0),
                 child: SingleChildScrollView(
                   child: cardWidget(),
                 )
@@ -235,7 +235,6 @@ class cardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(10.0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

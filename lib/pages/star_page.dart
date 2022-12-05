@@ -11,13 +11,14 @@ class StarPage extends StatefulWidget {
 }
 
 class _StarPageState extends State<StarPage> {
-  List<int> data = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,];
+  List<int> data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.white,
             title: Text(
               'ePatrakaar',
               style: TextStyle(
@@ -30,13 +31,16 @@ class _StarPageState extends State<StarPage> {
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(40.0),
               child: Row(
-                children:  [
-                  Text('Notifications',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),)
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Text('Notifications',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+                      ),),
+                  )
                 ],
               ),
             ),
@@ -45,36 +49,48 @@ class _StarPageState extends State<StarPage> {
             child: Container(
               margin: EdgeInsets.only(top: 10.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ...data.map((val)
-                        {
-                          return Container(
-                            height: 120,
-                              width: 410,
-                              child: Card(
-                            color: Colors.transparent,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero,
-
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.black12,
+                  ...data.map((val) {
+                    return Card(
+                        color: Colors.white,
+                        child: Column(
+                            children: [
+                              Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(10.0),
+                                      margin: EdgeInsets.all(10.0),
+                                      height: 55.0,
+                                      width: 82.0,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Add text here',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          ),),
+                                        SizedBox(height: 10.0,),
+                                        Text('Add subtitle here',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w200,
+                                            fontSize: 10,
+                                          ),)
+                                      ],
+                                    )
+                                  ]
                               ),
-                            )
-
-                          ));
-                        }),
-                      ],
-                    ),
-                  )
+                            ]
+                        )
+                    );
+                  })
                 ],
               ),
             ),

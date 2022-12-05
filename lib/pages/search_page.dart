@@ -12,7 +12,7 @@ List<int> data = [1,2,3,4];
 class _SearchPageState extends State<SearchPage> {
 
   String text = "View more";
-  bool expandable = true;
+  bool expandable = false;
 
   String get appText => "View less";
 
@@ -47,7 +47,7 @@ class _SearchPageState extends State<SearchPage> {
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                   hintText: "Search news",
-                  suffixIcon: ImageIcon(AssetImage('images/icons/search outline.png'))
+                  suffixIcon: ImageIcon(AssetImage('images/icons/search outline.png')),
                 ),
               ),
               SizedBox(height: 10.0,),
