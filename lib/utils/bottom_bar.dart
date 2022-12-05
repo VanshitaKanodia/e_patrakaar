@@ -1,8 +1,11 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:e_patrakar/pages/home_page.dart';
 import 'package:e_patrakar/pages/view_page.dart';
 import 'package:e_patrakar/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/profile.dart';
 import '../pages/star_page.dart';
 
 
@@ -15,7 +18,7 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   int _currentIndex=0;
-   var tabs=[HomePage(),ViewPage(),SearchPage(),StarPage()];
+   var tabs=[HomePage(),ViewPage(),SearchPage(),StarPage(),Profile()];
 
   @override
   Widget build(BuildContext context) {
