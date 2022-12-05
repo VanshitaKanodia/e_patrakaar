@@ -14,7 +14,6 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
 
   List<int> data = [1, 2, 3, 4, 5];
-  final _controllable = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -100,14 +99,12 @@ class _ProfileState extends State<Profile> {
                       fontWeight: FontWeight.w500,
                     ),),
                   Container(
-                    margin: EdgeInsets.only(left: 4),
+                    margin: EdgeInsets.only(left: 4, bottom: 5),
                     width: 40,
                     height: 1,
                     color: Colors.grey[600],
                   ),
-                  SingleChildScrollView(
-                      controller: _controllable,
-                      scrollDirection: Axis.vertical,
+                  Flexible(
                       child: ListView.builder(
                           itemCount: 5,
                           shrinkWrap: true,
