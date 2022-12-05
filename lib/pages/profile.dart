@@ -78,8 +78,7 @@ class _ProfileState extends State<Profile> {
                 color: Colors.grey[600],
               ),
             ],
-          )
-          
+          )  
         )
       ),
     );
