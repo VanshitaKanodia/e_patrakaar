@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'dart:ui';
+import 'package:e_patrakar/pages/EditProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -29,7 +30,90 @@ class _ProfileState extends State<Profile> {
               color: Colors.black,
             ),),
           actions: [
-            IconButton(onPressed: () {},
+            IconButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  useRootNavigator:true,
+                  backgroundColor: Colors.grey[900],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  context:context,
+                  builder:(builder){
+                    return Container(
+                      height:270.0,
+                      padding: EdgeInsets.all(20.0),
+                      child: Column(children: [
+                        Row(children: [
+                          Icon(Icons.access_time_outlined,color:Colors.white,size:25.0),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text("Your Activity",
+                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                        ],),
+                        SizedBox(
+                          height:15.0,
+                        ),
+                        Container(
+                          child: Row(children: [
+                            Icon(Icons.archive_outlined,color:Colors.white,size:25.0),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text("Archive",
+                            style:TextStyle(color:Colors.white,fontSize: 17.0))
+                          ],),
+                        ),
+                        SizedBox(
+                          height:15.0,
+                        ),
+                        Row(children: [
+                          Icon(Icons.privacy_tip_outlined,color:Colors.white,size:25.0),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text("Privacy Policy",
+                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                        ],),
+                        SizedBox(
+                          height:15.0,
+                        ),
+                        Row(children: [
+                          Icon(Icons.help_outline,color:Colors.white,size:25.0),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text("help",
+                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                        ],),
+                        SizedBox(
+                          height:15.0,
+                        ),
+                        Row(children: [
+                          Icon(Icons.dark_mode_rounded,color:Colors.white,size:25.0),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text("Theme",
+                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                        ],),
+                        SizedBox(
+                          height:15.0,
+                        ),
+                        Row(children: [
+                          Icon(Icons.settings_outlined,color:Colors.white,size:25.0),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Text("Settings",
+                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                        ],)
+                      ]),
+                    );
+                  }
+                );
+            },
               icon: ImageIcon(
                 AssetImage('images/icons/hamburger icon.png',),
                 color: Colors.black,),
@@ -72,11 +156,14 @@ class _ProfileState extends State<Profile> {
                             style: TextStyle(fontSize: 15.0),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile()));
+                            },
                             child: Text("Edit Info"),
                             style: ElevatedButton.styleFrom(
                               shape: StadiumBorder(),
                               textStyle: TextStyle(color: Colors.white),
+                              backgroundColor:Colors.black,
                             ),
                           ),
                         ],
