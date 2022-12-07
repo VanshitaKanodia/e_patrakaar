@@ -41,81 +41,100 @@ class _ProfileState extends State<Profile> {
                   context:context,
                   builder:(builder){
                     return Container(
+                      margin: EdgeInsets.all(5.0),
                       height:270.0,
                       padding: EdgeInsets.all(20.0),
                       child: Column(children: [
                         Row(children: [
-                          Icon(Icons.access_time_outlined,color:Colors.white,size:25.0),
+                          ImageIcon(AssetImage('images/icons/your activity.png'),
+                          color: Colors.white,
+                          size: 25,),
                           SizedBox(
                             width: 10.0,
                           ),
                           Text("Your Activity",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                          style:TextStyle(color:Colors.white,fontSize: 17.0,
+                              fontWeight: FontWeight.w400)),
                         ],),
                         SizedBox(
                           height:15.0,
                         ),
                         Container(
                           child: Row(children: [
-                            Icon(Icons.archive_outlined,color:Colors.white,size:25.0),
+                            ImageIcon(AssetImage('images/icons/archive.png'),
+                              color: Colors.white,
+                              size: 25,),
                             SizedBox(
                               width: 10.0,
                             ),
                             Text("Archive",
-                            style:TextStyle(color:Colors.white,fontSize: 17.0))
+                            style:TextStyle(color:Colors.white,fontSize: 17.0,
+                                fontWeight: FontWeight.w400))
                           ],),
                         ),
                         SizedBox(
                           height:15.0,
                         ),
                         Row(children: [
-                          Icon(Icons.privacy_tip_outlined,color:Colors.white,size:25.0),
+                          ImageIcon(AssetImage('images/icons/privacy policy.png'),
+                            color: Colors.white,
+                            size: 25,),
                           SizedBox(
                             width: 10.0,
                           ),
                           Text("Privacy Policy",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                          style:TextStyle(color:Colors.white,fontSize: 17.0,
+                              fontWeight: FontWeight.w400))
                         ],),
                         SizedBox(
                           height:15.0,
                         ),
                         Row(children: [
-                          Icon(Icons.help_outline,color:Colors.white,size:25.0),
+                          ImageIcon(AssetImage('images/icons/help.png'),
+                            color: Colors.white,
+                            size: 25,),
                           SizedBox(
                             width: 10.0,
                           ),
-                          Text("help",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                          Text("Help",
+                          style:TextStyle(color:Colors.white,fontSize: 17.0,
+                              fontWeight: FontWeight.w400))
                         ],),
                         SizedBox(
                           height:15.0,
                         ),
                         Row(children: [
-                          Icon(Icons.dark_mode_rounded,color:Colors.white,size:25.0),
+                          ImageIcon(AssetImage('images/icons/theme.png'),
+                            color: Colors.white,
+                            size: 25,),
                           SizedBox(
                             width: 10.0,
                           ),
                           Text("Theme",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
+                          style:TextStyle(color:Colors.white,fontSize: 17.0,
+                              fontWeight: FontWeight.w400))
                         ],),
                         SizedBox(
                           height:15.0,
                         ),
                         Row(children: [
-                          Icon(Icons.settings_outlined,color:Colors.white,size:25.0),
+                          ImageIcon(AssetImage('images/icons/settings.png'),
+                            color: Colors.white,
+                            size: 25,),
                           SizedBox(
                             width: 10.0,
                           ),
                           Text("Settings",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
-                        ],)
+                          style:TextStyle(color:Colors.white,fontSize: 17.0,
+                              fontWeight: FontWeight.w400))
+                        ],),
                       ]),
                     );
                   }
                 );
             },
               icon: ImageIcon(
-                AssetImage('images/icons/hamburger icon.png',),
+                AssetImage('images/icons/hamburger.png',),
                 color: Colors.black,),
             ),
           ],
@@ -136,7 +155,6 @@ class _ProfileState extends State<Profile> {
                             borderRadius: BorderRadius.circular(50.0),
                             color: Colors.grey
                         ),
-
                       ),
                       SizedBox(
                         width: MediaQuery
@@ -163,7 +181,7 @@ class _ProfileState extends State<Profile> {
                             style: ElevatedButton.styleFrom(
                               shape: StadiumBorder(),
                               textStyle: TextStyle(color: Colors.white),
-                              backgroundColor:Colors.black,
+                              // backgroundColor:Colors.black,
                             ),
                           ),
                         ],
@@ -172,7 +190,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   SizedBox(height: 10.0,),
                   Container(
-                    margin: EdgeInsets.only(top: 40.0, bottom: 40.0),
+                    margin: EdgeInsets.only(top: 40.0, bottom: 30.0),
                     width: MediaQuery
                         .of(context)
                         .size
@@ -186,7 +204,7 @@ class _ProfileState extends State<Profile> {
                       fontWeight: FontWeight.w500,
                     ),),
                   Container(
-                    margin: EdgeInsets.only(left: 4, bottom: 5),
+                    margin: EdgeInsets.only(left: 4, bottom: 7),
                     width: 40,
                     height: 1,
                     color: Colors.grey[600],

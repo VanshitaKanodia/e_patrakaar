@@ -16,11 +16,11 @@ class _EditProfileState extends State<EditProfile> {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
-          title: Text('Edit Info',
+          title: Text('My Account',
             style: TextStyle(
               fontFamily: 'ElMessiri',
               fontWeight: FontWeight.w700,
-              fontSize: 24,
+              fontSize: 20,
               color: Colors.black,
             ),),
           actions: [
@@ -109,7 +109,7 @@ class _EditProfileState extends State<EditProfile> {
                 );
             },
               icon: ImageIcon(
-                AssetImage('images/icons/hamburger icon.png',),
+                AssetImage('images/icons/hamburger.png',),
                 color: Colors.black,),
             ),
           ],

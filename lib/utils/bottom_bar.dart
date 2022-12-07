@@ -25,47 +25,57 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       body: Container(child: tabs[_currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         iconSize: 24,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
             BottomNavigationBarItem(
-            icon:ImageIcon(
-              AssetImage('images/icons/home filled.png',),
-              size: 24.0,
-            ),
+            icon: Icon(Icons.home_outlined),
             backgroundColor: Colors.black,
             label: '',
-
+            activeIcon: ImageIcon(
+                AssetImage('images/icons/home filled.png',),
+            ),
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('images/icons/news outline.png',)
+                AssetImage('images/icons/broadcast.png',)
               ),
               backgroundColor: Colors.black,
-              label:""
+              label:"",
+              activeIcon: ImageIcon(
+                AssetImage('images/icons/broadcast filled.png'),
+              )
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('images/icons/search outline.png')),
+              icon: ImageIcon(AssetImage('images/icons/search.png')),
               backgroundColor: Colors.black,
               label:""
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('images/icons/star filled.png')),
+              icon: ImageIcon(AssetImage('images/icons/fav.png')),
               backgroundColor: Colors.black,
-              label:""
+              label:"",
+              activeIcon: ImageIcon(
+                AssetImage('images/icons/fav filled.png'),
+              )
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
-                AssetImage('images/icons/my account outline.png')
+                AssetImage('images/icons/my acc.png'),
               ),
               backgroundColor: Colors.black,
-              label:""
+              label:"",
+              activeIcon: ImageIcon(
+                  AssetImage('images/icons/my account filled.png')
+              ),
             ),
           ],
           fixedColor: Colors.white,
-          unselectedItemColor: Colors.orange,
+          unselectedItemColor: Colors.white,
           currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
 
           onTap: (setValue){
             setState((){

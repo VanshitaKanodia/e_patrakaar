@@ -47,7 +47,7 @@ class _SearchPageState extends State<SearchPage> {
                     borderRadius: BorderRadius.circular(40.0),
                   ),
                   hintText: "Search news",
-                  suffixIcon: ImageIcon(AssetImage('images/icons/search outline.png')),
+                  suffixIcon: ImageIcon(AssetImage('images/icons/search.png')),
                 ),
               ),
               SizedBox(height: 10.0,),
