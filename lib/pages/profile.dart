@@ -126,7 +126,8 @@ class _ProfileState extends State<Profile> {
                           ),
                           Text("Settings",
                           style:TextStyle(color:Colors.white,fontSize: 17.0,
-                              fontWeight: FontWeight.w400))
+                              fontWeight: FontWeight.w400,
+                          fontFamily: 'LibreFranklin',))
                         ],),
                       ]),
                     );

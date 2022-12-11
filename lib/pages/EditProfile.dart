@@ -28,7 +28,7 @@ class _EditProfileState extends State<EditProfile> {
             IconButton(
               onPressed: () {},
               icon: ImageIcon(
-                AssetImage('images/icons/hamburger icon.png',),
+                AssetImage('images/icons/hamburger.png',),
                 color: Colors.black,),
             ),
           ],
@@ -114,7 +114,7 @@ class _EditProfileState extends State<EditProfile> {
                   shape: StadiumBorder(),
                   minimumSize: Size(160,35),
                   textStyle: TextStyle(color: Colors.white),
-                  backgroundColor:Colors.black,
+                  // backgroundColor:Colors.black,
                 ), 
               )
               ),
@@ -409,7 +409,6 @@ class _EditProfileState extends State<EditProfile> {
                    style: ElevatedButton.styleFrom(
                     padding:EdgeInsets.all(10.0),
                   textStyle: TextStyle(color: Colors.white,fontSize:15.0),
-                  backgroundColor:Colors.black,
                 ), 
                   ),
                 ],

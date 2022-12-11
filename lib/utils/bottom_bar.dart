@@ -31,7 +31,9 @@ class _BottomBarState extends State<BottomBar> {
         showUnselectedLabels: false,
         items: [
             BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: ImageIcon(
+              AssetImage('images/icons/home outline.png',),
+            ),
             backgroundColor: Colors.black,
             label: '',
             activeIcon: ImageIcon(
@@ -51,7 +53,8 @@ class _BottomBarState extends State<BottomBar> {
             BottomNavigationBarItem(
               icon: ImageIcon(AssetImage('images/icons/search.png')),
               backgroundColor: Colors.black,
-              label:""
+              label:"",
+              activeIcon: ImageIcon(AssetImage('images/icons/search bold outline.png')),
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(AssetImage('images/icons/fav.png')),

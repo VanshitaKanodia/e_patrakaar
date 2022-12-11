@@ -14,31 +14,36 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
   final List<Tab> _tabList = [
     Tab(child: Text("Sports",
       style: TextStyle(
-        fontSize: 20,
+        fontSize: 17,
+        fontFamily: 'LibreFranklin',
         fontWeight: FontWeight.w400,
         color: Colors.black,
       ),)),
     Tab(child: Text("Health",
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 17,
+          fontFamily: 'LibreFranklin',
           fontWeight: FontWeight.w400,
           color: Colors.black,
         ))),
     Tab(child: Text("Entertainment",
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 17,
+          fontFamily: 'LibreFranklin',
           fontWeight: FontWeight.w400,
           color: Colors.black,
         ))),
     Tab(child: Text("Science",
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 17,
+          fontFamily: 'LibreFranklin',
           fontWeight: FontWeight.w400,
           color: Colors.black,
         ))),
     Tab(child: Text("Technology",
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 17,
+          fontFamily: 'LibreFranklin',
           fontWeight: FontWeight.w400,
           color: Colors.black,
         ))),
@@ -67,7 +72,7 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
             toolbarHeight: 110.0,
             backgroundColor: Colors.transparent,
             title: Text(
-              'ePatrakaar',
+              'E-PATRAKAAR',
               style: TextStyle(
                 fontFamily: 'ElMessiri',
                 fontSize: 24,
@@ -155,8 +160,8 @@ class sportsWidget extends StatelessWidget {
                   ...data.map((val) {
                     return Container(
                       margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                      width: 400.0,
-                      height: 165.0,
+                      width: 398.0,
+                      height: 141.41,
                       decoration: BoxDecoration(
                         color: Colors.black38,
                       ),
@@ -244,8 +249,8 @@ class cardWidget extends StatelessWidget {
                     ...data.map((val) {
                       return Container(
                         margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                        width: 400.0,
-                        height: 165.0,
+                        width: 398.0,
+                        height: 140.0,
                         decoration: BoxDecoration(
                           color: Colors.black38,
                         ),
@@ -258,6 +263,7 @@ class cardWidget extends StatelessWidget {
                   color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  fontFamily: 'LibreFranklin',
                 ),),
               SizedBox(height: 10.0,),
               Column(
@@ -277,7 +283,7 @@ class cardWidget extends StatelessWidget {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    'news_image.jpg',
+                                    'images/icons/home outline.png',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
