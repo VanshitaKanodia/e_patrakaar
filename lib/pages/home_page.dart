@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _itemCount = 4;
+  int _itemCount = 5;
   final _controller = PageController();
 
   @override
@@ -30,14 +30,14 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Trending News',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 24.0,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 5),
-                      height: 165.0,
+                      height: 150.0,
                       child: PageView(
                         controller: _controller,
                         scrollDirection: Axis.horizontal,
@@ -57,14 +57,14 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 3.0,),
+                    SizedBox(height: 13.0,),
                     SmoothPageIndicator(
                         controller: _controller, count: _itemCount,
                         effect: ExpandingDotsEffect(
                           expansionFactor: 1.01,
                           dotWidth: 12,
                           dotHeight: 12,
-                          spacing: 5,
+                          spacing: 15,
                           dotColor: Colors.grey,
                           activeDotColor: Colors.blueAccent,
                         ),
@@ -72,25 +72,25 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 15.0),
+              SizedBox(height: 27.0),
 
               Text('Viral Updates',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 24.0,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
 
-              SizedBox(height: 10.0),
+              SizedBox(height: 13.21),
 
               Container(
                 child: Column(
                   children: [
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 5),
-                      height: 70.0,
+                      height: 87.0,
                       child: ListView.builder(
-                          itemCount: 10,
+                          itemCount: 5,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
@@ -107,18 +107,18 @@ class _HomePageState extends State<HomePage> {
               Text('Recommended Topics',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  fontSize: 20,
+                  fontSize: 24,
                   fontFamily: 'LibreFranklin',
                 ),),
 
-              SizedBox(height: 10.0,),
+              SizedBox(height: 14.0,),
 
               Container(
                   child: Column(
                     children: [
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 5.0),
-                        height: 200.0,
+                        height: 266.0,
                         child: ListView.builder(
                           itemCount: 5,
                           shrinkWrap: true,
@@ -136,11 +136,11 @@ class _HomePageState extends State<HomePage> {
 
               Text('Browse Channels',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 24,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
-
+              SizedBox(height: 8.77,),
               Container(
                   child: Column(
                     children: [
@@ -198,10 +198,6 @@ class CircularBox extends StatelessWidget {
 }
 
 
-
-
-
-
 class BoxCategory1 extends StatelessWidget {
   const BoxCategory1({
     Key? key,
@@ -210,24 +206,25 @@ class BoxCategory1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 16),
       child: Stack(
         children: [
-          ClipRRect(
-            child: Image(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image(
               image: AssetImage(
-                'images/widget_images/1.png',
+                'images/widget_images/1.png'
               ),
-            )
-          ),
-          Expanded(
-            child: Container(
-            width: 398,
-            height: 143.0,
-            decoration: BoxDecoration(
-              color: Colors.black38,
+              fit: BoxFit.fitHeight,
             ),
-          ),
+              Text('Text here',
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'LibreFranklin',
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+              ),)
+            ]
           ),
         ],
       ),
@@ -247,20 +244,19 @@ class BoxCategory2 extends StatelessWidget {
       margin: EdgeInsets.only(right: 14),
       child: Stack(
           children: [
-            ClipRRect(
-              child:
-                Text("Image")
-              // Image.asset('',
-              //   height: 30.0,
-              //   width: 30.0,
-              //   fit: BoxFit.cover,),
-            ),
-            Container(
-              width: 84.0,
-              height: 84.0,
-              decoration: BoxDecoration(
-                color: Colors.black38,
+            Column(
+              children: [
+                Image(
+                image: AssetImage('images/widget_images/2.png'),
               ),
+                Text('Text here',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'LibreFranklin',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),)
+              ]
             ),
           ]
       ),
@@ -280,15 +276,42 @@ class BoxCategory3 extends StatelessWidget {
       margin: EdgeInsets.only(right: 16),
       child: Stack(
         children: [
-          ClipRRect(
-            child: Text("image"),
-            // Image.asset(name),
-          ),
           Container(
-            width: 186,
-            height: 266,
-            decoration: BoxDecoration(
-              color: Colors.black38,
+            height: 188,
+            width: 189,
+            child: Column(
+              children: [
+                Image(
+                  image: AssetImage(
+                    'images/widget_images/6.png',
+                  ),
+              ),
+                Text('Text here',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'LibreFranklin',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),),
+                SizedBox(
+                  height: 43,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Text here',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'LibreFranklin',
+                      fontSize: 10,
+                      fontWeight: FontWeight.w200,
+                    ),),
+                  // ElevatedButton(onPressed: (){},
+                  //     child: Text('Follow')
+                  // )
+                ],
+                )
+              ]
             ),
           ),
         ],
