@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: const Text('E-PATRAKAAR',
+        title: const Text('ePatrakaar',
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 24,
@@ -30,14 +30,14 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.only(left: 12, right: 15, top: 5, bottom: 5),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Trending News',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
@@ -57,29 +57,29 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 13.0,),
                     SmoothPageIndicator(
-                        controller: _controller, count: _itemCount,
-                        effect: ExpandingDotsEffect(
-                          expansionFactor: 1.01,
-                          dotWidth: 12,
-                          dotHeight: 12,
-                          spacing: 15,
-                          dotColor: Colors.grey,
-                          activeDotColor: Colors.blueAccent,
-                        ),
+                      controller: _controller, count: _itemCount,
+                      effect: ExpandingDotsEffect(
+                        expansionFactor: 1.01,
+                        dotWidth: 12,
+                        dotHeight: 12,
+                        spacing: 15,
+                        dotColor: Colors.grey,
+                        activeDotColor: Colors.blueAccent,
+                      ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 27.0),
+              SizedBox(height: 20.0),
 
               Text('Viral Updates',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 18.0,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
-                ),),
+                ),
+              ),
 
               SizedBox(height: 13.21),
 
@@ -87,7 +87,6 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
                       height: 87.0,
                       child: ListView.builder(
                           itemCount: 5,
@@ -107,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               Text('Recommended Topics',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  fontSize: 24,
+                  fontSize: 18,
                   fontFamily: 'LibreFranklin',
                 ),),
 
@@ -117,7 +116,6 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 5.0),
                         height: 266.0,
                         child: ListView.builder(
                           itemCount: 5,
@@ -136,16 +134,14 @@ class _HomePageState extends State<HomePage> {
 
               Text('Browse Channels',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 18,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
-              SizedBox(height: 8.77,),
               Container(
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 5.0),
                         height: 100.0,
                         child: ListView.builder(
                           itemCount: 4,
@@ -176,23 +172,11 @@ class CircularBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 10.0),
-      child: Stack(
-        children: [
-          ClipRRect(
-            child: Text(""),
-            // Image.asset(name),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10.0),
-            height: 84,
-            width: 84,
-            decoration: BoxDecoration(
-              color: Colors.black38,
-              borderRadius: BorderRadius.circular(100.0),
-            ),
-          )
-        ],
-      ),
+      child: CircleAvatar(
+        backgroundImage: AssetImage('images/widget_images/5.png'),
+        radius: 40.0,
+
+      )
     );
   }
 }
@@ -217,13 +201,14 @@ class BoxCategory1 extends StatelessWidget {
               ),
               fit: BoxFit.fitHeight,
             ),
-              Text('Text here',
+              Text('this is the lastest news as in api reffered',
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'LibreFranklin',
                 fontSize: 17,
                 fontWeight: FontWeight.w400,
-              ),)
+              ),
+              maxLines: 1,)
             ]
           ),
         ],
@@ -242,23 +227,22 @@ class BoxCategory2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 14),
-      child: Stack(
-          children: [
-            Column(
+      child: Column(
               children: [
                 Image(
                 image: AssetImage('images/widget_images/2.png'),
-              ),
-                Text('Text here',
+                  fit: BoxFit.fitHeight,
+                ),
+                Text('api news here',
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'LibreFranklin',
-                    fontSize: 12,
+                    fontSize: 4,
                     fontWeight: FontWeight.w400,
-                  ),)
+                  ),
+                maxLines: 1,
+                ),
               ]
-            ),
-          ]
       ),
     );
   }
@@ -273,12 +257,12 @@ class BoxCategory3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 16),
+      margin: EdgeInsets.only(right: 12),
       child: Stack(
         children: [
           Container(
             height: 188,
-            width: 189,
+            width: 160,
             child: Column(
               children: [
                 Image(

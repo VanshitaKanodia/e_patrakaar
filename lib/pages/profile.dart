@@ -21,6 +21,7 @@ class _ProfileState extends State<Profile> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0.0,
           backgroundColor: Colors.white,
           title: Text('Username',
             style: TextStyle(
@@ -141,15 +142,14 @@ class _ProfileState extends State<Profile> {
           ],
         ),
         body: Container(
-            margin: EdgeInsets.only(top: 20.0),
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(left: 20),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(10.0),
+                        // padding: EdgeInsets.all(5.0),
                         height: 90,
                         width: 90,
                         decoration: BoxDecoration(
@@ -161,7 +161,7 @@ class _ProfileState extends State<Profile> {
                         width: MediaQuery
                             .of(context)
                             .size
-                            .width / 20,
+                            .width / 50,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,15 +189,15 @@ class _ProfileState extends State<Profile> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10.0,),
+                  // SizedBox(height: 10.0,),
                   Container(
-                    margin: EdgeInsets.only(top: 40.0, bottom: 30.0),
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width,
-                    height: 1,
-                    color: Colors.grey[600],
+                    margin: EdgeInsets.only(top: 15.0, bottom: 30.0),
+                    width: 320,
+                    child: Divider(
+                      height: 1,
+                      thickness: 1,
+                      color: Colors.grey[500],
+                    ),
                   ),
                   Text('Saved',
                     style: TextStyle(
@@ -205,7 +205,6 @@ class _ProfileState extends State<Profile> {
                       fontWeight: FontWeight.w500,
                     ),),
                   Container(
-                    margin: EdgeInsets.only(left: 4, bottom: 7),
                     width: 40,
                     height: 1,
                     color: Colors.grey[600],
@@ -218,6 +217,7 @@ class _ProfileState extends State<Profile> {
                           itemBuilder: (context, index) {
                             return Card(
                                 color: Colors.white,
+                                elevation: 0.0,
                                 child: Column(
                                     children: [
                                       Row(
@@ -225,8 +225,8 @@ class _ProfileState extends State<Profile> {
                                               .center,
                                           children: [
                                             Container(
-                                              padding: EdgeInsets.all(10.0),
-                                              margin: EdgeInsets.all(10.0),
+                                              // padding: EdgeInsets.only(left: 5.0),
+                                              // margin: EdgeInsets.only(top: 5, left: 5, right: 5, bottom: 5),
                                               height: 68.0,
                                               width: 70.0,
                                               decoration: BoxDecoration(

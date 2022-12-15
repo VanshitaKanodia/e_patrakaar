@@ -34,7 +34,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
         ),
         body: Container(
-          margin: EdgeInsets.only(top: 20.0),
+          margin: EdgeInsets.only(top: 10.0),
           padding: EdgeInsets.all(10),
           child: Column(
             children: [

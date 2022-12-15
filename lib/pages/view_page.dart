@@ -69,10 +69,10 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            toolbarHeight: 110.0,
-            backgroundColor: Colors.transparent,
+            toolbarHeight: 80.0,
+            backgroundColor: Colors.white,
             title: Text(
-              'E-PATRAKAAR',
+              'ePatrakaar',
               style: TextStyle(
                 fontFamily: 'ElMessiri',
                 fontSize: 24,
@@ -209,6 +209,7 @@ class sportsWidget extends StatelessWidget {
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
                             return Container(
+                              width: 150,
                                 margin: EdgeInsets.only(right: 16),
                                 child: Stack(
                                     children: [

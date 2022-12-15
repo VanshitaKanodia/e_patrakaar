@@ -15,23 +15,16 @@ class _EditProfileState extends State<EditProfile> {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
-          title: Text('Edit Info',
+          title: Text('My Account',
             style: TextStyle(
               fontFamily: 'ElMessiri',
               fontWeight: FontWeight.w700,
               fontSize: 24,
               color: Colors.black,
             ),),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: ImageIcon(
-                AssetImage('images/icons/hamburger.png',),
-                color: Colors.black,),
-            ),
-          ],
         ),
       body:Container(
         padding:EdgeInsets.only(left:15,top:20,right:15),
@@ -71,53 +64,53 @@ class _EditProfileState extends State<EditProfile> {
             SizedBox(
               height:5.0,
             ),
-            Center(
-              child:ElevatedButton(onPressed: (){
-                showModalBottomSheet(
-                  useRootNavigator:true,
-                  backgroundColor: Colors.grey[900],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  context:context,
-                  builder:(builder){
-                    return Container(
-                      height:100.0,
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(children: [
-                        Row(children: [
-                          Icon(Icons.camera_alt_outlined,color:Colors.white,size:25.0),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Text("Take a photo",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
-                        ],),
-                        SizedBox(
-                          height:10.0,
-                        ),
-                        Row(children: [
-                          Icon(Icons.folder_copy_outlined,color:Colors.white,size:25.0),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Text("Upload the photo",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0))
-                        ],),
-                      ]),
-                    );
-                  }
-                );
-              }, 
-              child:Text("Edit profile picture"),
-                style: ElevatedButton.styleFrom(
-                  shape: StadiumBorder(),
-                  minimumSize: Size(160,35),
-                  textStyle: TextStyle(color: Colors.white),
-                  // backgroundColor:Colors.black,
-                ), 
-              )
-              ),
+            // Center(
+            //   child:ElevatedButton(onPressed: (){
+            //     showModalBottomSheet(
+            //       useRootNavigator:true,
+            //       backgroundColor: Colors.grey[900],
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(30.0),
+            //       ),
+            //       context:context,
+            //       builder:(builder){
+            //         return Container(
+            //           height:100.0,
+            //           padding: EdgeInsets.all(20.0),
+            //           child: Column(children: [
+            //             Row(children: [
+            //               Icon(Icons.camera_alt_outlined,color:Colors.white,size:25.0),
+            //               SizedBox(
+            //                 width: 10.0,
+            //               ),
+            //               Text("Take a photo",
+            //               style:TextStyle(color:Colors.white,fontSize: 17.0))
+            //             ],),
+            //             SizedBox(
+            //               height:10.0,
+            //             ),
+            //             Row(children: [
+            //               Icon(Icons.folder_copy_outlined,color:Colors.white,size:25.0),
+            //               SizedBox(
+            //                 width: 10.0,
+            //               ),
+            //               Text("Upload the photo",
+            //               style:TextStyle(color:Colors.white,fontSize: 17.0))
+            //             ],),
+            //           ]),
+            //         );
+            //       }
+            //     );
+            //   },
+              // child:Text("Edit profile picture"),
+              //   style: ElevatedButton.styleFrom(
+              //     shape: StadiumBorder(),
+              //     minimumSize: Size(160,35),
+              //     textStyle: TextStyle(color: Colors.white),
+              //     // backgroundColor:Colors.black,
+              //   ),
+            //   )
+            //   ),
               SizedBox(
                 height:20.0
               ),
@@ -278,12 +271,12 @@ class _EditProfileState extends State<EditProfile> {
                   Container(
                     width:140.0,
                     height:40.0,
-                    decoration: BoxDecoration(
-                      border:Border.all(
-                        color:Colors.black
-                      ),
-                      borderRadius:BorderRadius.circular(5)
-                    ),
+                    // decoration: BoxDecoration(
+                    //   border:Border.all(
+                    //     color:Colors.black
+                    //   ),
+                    //   borderRadius:BorderRadius.circular(5)
+                    // ),
                     padding:EdgeInsets.all(10.0),
                     child:Row(
                       children:[
@@ -299,20 +292,19 @@ class _EditProfileState extends State<EditProfile> {
                         SizedBox(
                           width:30.0,
                         ),
-                        Text("MALE")
+                        Text("Male")
                       ],
                     ),
                   ),
-                  SizedBox(width:50.0),
                   Container(
                     width:140.0,
                     height:40.0,
-                    decoration: BoxDecoration(
-                      border:Border.all(
-                        color:Colors.black
-                      ),
-                      borderRadius:BorderRadius.circular(5)
-                    ),
+                    // decoration: BoxDecoration(
+                    //   border:Border.all(
+                    //     color:Colors.black
+                    //   ),
+                    //   borderRadius:BorderRadius.circular(5)
+                    // ),
                     padding:EdgeInsets.all(10.0),
                     child:Row(
                       children:[
@@ -326,9 +318,9 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                         ),
                         SizedBox(
-                          width:30.0,
+                          width:20.0,
                         ),
-                        Text("FEMALE")
+                        Text("Female")
                       ],
                     ),
                   ),

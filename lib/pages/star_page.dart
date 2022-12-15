@@ -18,25 +18,26 @@ class _StarPageState extends State<StarPage> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0.0,
             backgroundColor: Colors.white,
             title: Text(
               'ePatrakaar',
               style: TextStyle(
                 fontFamily: 'ElMessiri',
-                fontSize: 30,
+                fontSize: 24,
                 fontWeight: FontWeight.w700,
                 color: Colors.black,
               ),
             ),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(40.0),
+              preferredSize: Size.fromHeight(20.0),
               child: Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 10.0),
+                    padding: EdgeInsets.only(left: 25.0),
                     child: Text('Notifications',
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),),
