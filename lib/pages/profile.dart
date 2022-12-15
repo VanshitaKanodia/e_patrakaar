@@ -34,107 +34,116 @@ class _ProfileState extends State<Profile> {
             IconButton(
               onPressed: () {
                 showModalBottomSheet(
-                  useRootNavigator:true,
-                  backgroundColor: Colors.grey[900],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  context:context,
-                  builder:(builder){
-                    return Container(
-                      margin: EdgeInsets.all(5.0),
-                      height:270.0,
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(children: [
-                        Row(children: [
-                          ImageIcon(AssetImage('images/icons/your activity.png'),
-                          color: Colors.white,
-                          size: 25,),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Text("Your Activity",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0,
-                              fontWeight: FontWeight.w400)),
-                        ],),
-                        SizedBox(
-                          height:15.0,
-                        ),
-                        Container(
-                          child: Row(children: [
-                            ImageIcon(AssetImage('images/icons/archive.png'),
+                    useRootNavigator: true,
+                    backgroundColor: Colors.grey[900],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    context: context,
+                    builder: (builder) {
+                      return Container(
+                        margin: EdgeInsets.all(5.0),
+                        height: 270.0,
+                        padding: EdgeInsets.all(20.0),
+                        child: Column(children: [
+                          Row(children: [
+                            ImageIcon(
+                              AssetImage('images/icons/your activity.png'),
                               color: Colors.white,
                               size: 25,),
                             SizedBox(
                               width: 10.0,
                             ),
-                            Text("Archive",
-                            style:TextStyle(color:Colors.white,fontSize: 17.0,
-                                fontWeight: FontWeight.w400))
+                            Text("Your Activity",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 17.0,
+                                    fontWeight: FontWeight.w400)),
                           ],),
-                        ),
-                        SizedBox(
-                          height:15.0,
-                        ),
-                        Row(children: [
-                          ImageIcon(AssetImage('images/icons/privacy policy.png'),
-                            color: Colors.white,
-                            size: 25,),
                           SizedBox(
-                            width: 10.0,
+                            height: 15.0,
                           ),
-                          Text("Privacy Policy",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0,
-                              fontWeight: FontWeight.w400))
-                        ],),
-                        SizedBox(
-                          height:15.0,
-                        ),
-                        Row(children: [
-                          ImageIcon(AssetImage('images/icons/help.png'),
-                            color: Colors.white,
-                            size: 25,),
+                          Container(
+                            child: Row(children: [
+                              ImageIcon(AssetImage('images/icons/archive.png'),
+                                color: Colors.white,
+                                size: 25,),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              Text("Archive",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 17.0,
+                                      fontWeight: FontWeight.w400))
+                            ],),
+                          ),
                           SizedBox(
-                            width: 10.0,
+                            height: 15.0,
                           ),
-                          Text("Help",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0,
-                              fontWeight: FontWeight.w400))
-                        ],),
-                        SizedBox(
-                          height:15.0,
-                        ),
-                        Row(children: [
-                          ImageIcon(AssetImage('images/icons/theme.png'),
-                            color: Colors.white,
-                            size: 25,),
+                          Row(children: [
+                            ImageIcon(
+                              AssetImage('images/icons/privacy policy.png'),
+                              color: Colors.white,
+                              size: 25,),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text("Privacy Policy",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 17.0,
+                                    fontWeight: FontWeight.w400))
+                          ],),
                           SizedBox(
-                            width: 10.0,
+                            height: 15.0,
                           ),
-                          Text("Theme",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0,
-                              fontWeight: FontWeight.w400))
-                        ],),
-                        SizedBox(
-                          height:15.0,
-                        ),
-                        Row(children: [
-                          ImageIcon(AssetImage('images/icons/settings.png'),
-                            color: Colors.white,
-                            size: 25,),
+                          Row(children: [
+                            ImageIcon(AssetImage('images/icons/help.png'),
+                              color: Colors.white,
+                              size: 25,),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text("Help",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 17.0,
+                                    fontWeight: FontWeight.w400))
+                          ],),
                           SizedBox(
-                            width: 10.0,
+                            height: 15.0,
                           ),
-                          Text("Settings",
-                          style:TextStyle(color:Colors.white,fontSize: 17.0,
-                              fontWeight: FontWeight.w400,
-                          fontFamily: 'LibreFranklin',))
-                        ],),
-                      ]),
-                    );
-                  }
+                          Row(children: [
+                            ImageIcon(AssetImage('images/icons/theme.png'),
+                              color: Colors.white,
+                              size: 25,),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text("Theme",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 17.0,
+                                    fontWeight: FontWeight.w400))
+                          ],),
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          Row(children: [
+                            ImageIcon(AssetImage('images/icons/settings.png'),
+                              color: Colors.white,
+                              size: 25,),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text("Settings",
+                                style: TextStyle(
+                                  color: Colors.white, fontSize: 17.0,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'LibreFranklin',))
+                          ],),
+                        ],
+                        ),
+                      );
+                    }
                 );
-            },
+              },
               icon: ImageIcon(
                 AssetImage('images/icons/hamburger.png',),
                 color: Colors.black,),
@@ -148,20 +157,17 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        // padding: EdgeInsets.all(5.0),
-                        height: 90,
-                        width: 90,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50.0),
-                            color: Colors.grey
+                      CircleAvatar(
+                        radius: 40,
+                        child: Image(
+                          image: AssetImage('images/widget_images/47.png'),
                         ),
                       ),
                       SizedBox(
                         width: MediaQuery
                             .of(context)
                             .size
-                            .width / 50,
+                            .width / 25,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,13 +182,14 @@ class _ProfileState extends State<Profile> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile()));
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) => EditProfile()));
                             },
                             child: Text("Edit Info"),
                             style: ElevatedButton.styleFrom(
                               shape: StadiumBorder(),
                               textStyle: TextStyle(color: Colors.white),
-                              // backgroundColor:Colors.black,
+                              primary: Colors.black,
                             ),
                           ),
                         ],
@@ -191,7 +198,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   // SizedBox(height: 10.0,),
                   Container(
-                    margin: EdgeInsets.only(top: 15.0, bottom: 30.0),
+                    padding: EdgeInsets.only(top: 20.0, bottom: 30.0),
                     width: 320,
                     child: Divider(
                       height: 1,
@@ -205,58 +212,59 @@ class _ProfileState extends State<Profile> {
                       fontWeight: FontWeight.w500,
                     ),),
                   Container(
+                    margin: EdgeInsets.only(left: 5),
                     width: 40,
                     height: 1,
                     color: Colors.grey[600],
                   ),
                   Flexible(
                       child: ListView.builder(
-                          itemCount: 5,
+                          itemCount: 7,
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemBuilder: (context, index) {
                             return Card(
-                                color: Colors.white,
+                                color: Colors.transparent,
                                 elevation: 0.0,
-                                child: Column(
-                                    children: [
-                                      Row(
-                                          crossAxisAlignment: CrossAxisAlignment
-                                              .center,
-                                          children: [
-                                            Container(
-                                              // padding: EdgeInsets.only(left: 5.0),
-                                              // margin: EdgeInsets.only(top: 5, left: 5, right: 5, bottom: 5),
-                                              height: 68.0,
-                                              width: 70.0,
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.rectangle,
-                                                color: Colors.grey,
+                                child: Container(
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          width: 68.0,
+                                          height: 70.0,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                'images/widget_images/51.png',
                                               ),
                                             ),
-                                            SizedBox(width: 15,),
-                                            Column(
-                                              mainAxisAlignment: MainAxisAlignment
-                                                  .spaceEvenly,
-                                              crossAxisAlignment: CrossAxisAlignment
-                                                  .start,
-                                              children: [
-                                                Text('Add text here',
-                                                  style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),),
-                                                SizedBox(height: 10.0,),
-                                                Text('Add subtitle here',
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w200,
-                                                    fontSize: 10,
-                                                  ),)
-                                              ],
-                                            )
-                                          ]
-                                      ),
-                                    ]
+
+                                          ),
+                                        ),
+                                        SizedBox(width: 5.0),
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment
+                                                .start,
+                                            crossAxisAlignment: CrossAxisAlignment
+                                                .start,
+                                            children: [
+                                              Text('Add text here',
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                ),),
+                                              SizedBox(height: 10.0,),
+                                              Text('Add subtitle here',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.w200,
+                                                  fontSize: 10,
+                                                ),)
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    )
                                 )
                             );
                           }

@@ -98,26 +98,12 @@ class CityWidget extends StatelessWidget {
         ...data.map((val) {
           return Container(
             margin: EdgeInsets.only(right: 5.0),
-            child: Stack(
-              children: [
-                ClipRRect(
-                  child: Text(''),
-                  // child: Image(
-                  //   // image: AssetImage(''),
-                  // ),
-                  // Image.asset(name),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10.0),
-                  height: 80,
-                  width: 80,
-                  decoration: BoxDecoration(
-                    color: Colors.black38,
-                    borderRadius: BorderRadius.circular(100.0),
-                  ),
-                )
-              ],
-            ),
+            child: CircleAvatar(
+              child: Image(
+                image: AssetImage('images/widget_images/41.png'),
+              ),
+              radius: 40,
+            )
           );
         }),
       ],

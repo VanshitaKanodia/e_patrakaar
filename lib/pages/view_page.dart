@@ -69,6 +69,7 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0.0,
             toolbarHeight: 80.0,
             backgroundColor: Colors.white,
             title: Text(
@@ -104,34 +105,34 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
 
               //health page
               const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                  child: cardWidget(),
-                )
+                  padding: EdgeInsets.all(8.0),
+                  child: SingleChildScrollView(
+                    child: cardWidget(),
+                  )
               ),
 
               //Entertainment page
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                  child: cardWidget(),
-                )
+                  padding: EdgeInsets.all(8.0),
+                  child: SingleChildScrollView(
+                    child: cardWidget(),
+                  )
               ),
 
               //Science page
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                  child: cardWidget(),
-                )
+                  padding: EdgeInsets.all(8.0),
+                  child: SingleChildScrollView(
+                    child: cardWidget(),
+                  )
               ),
 
               //Technology page
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                  child: cardWidget(),
-                )
+                  padding: EdgeInsets.all(8.0),
+                  child: SingleChildScrollView(
+                    child: cardWidget(),
+                  )
               ),
             ],
           ),
@@ -151,7 +152,7 @@ class sportsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        margin: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0),
         child: Column(
           children: [
             Column(
@@ -159,39 +160,34 @@ class sportsWidget extends StatelessWidget {
                 children: [
                   ...data.map((val) {
                     return Container(
-                      margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
                       width: 398.0,
-                      height: 141.41,
-                      decoration: BoxDecoration(
-                        color: Colors.black38,
-                      ),
+                      height: 220.0,
+                      child: viewBox(),
                     );
                   }),
-                  SizedBox(height: 10.0,),
-                  Text('Top News',
+                  Text('Top Five',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                     ),),
-                    Container(
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10.0),
-                          height: 100.0,
-                          child: ListView.builder(
-                            itemCount: 4,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index)
-                            {
-                              return CircularBox();
-                            },
-                          ),
-                        )
-                      ],
-                    )
-                ),
+                  Container(
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 5),
+                            height: 100.0,
+                            child: ListView.builder(
+                              itemCount: 5,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                return CircularBox();
+                              },
+                            ),
+                          )
+                        ],
+                      )
+                  ),
                   SizedBox(height: 20.0,),
                   Text('Recommended Teams',
                     style: TextStyle(
@@ -200,28 +196,15 @@ class sportsWidget extends StatelessWidget {
                     ),),
                   SizedBox(height: 10.0,),
                   Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      height: 200.0,
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      height: 270.0,
                       child: ListView.builder(
                         //length of items used
                           itemCount: 6,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return Container(
-                              width: 150,
-                                margin: EdgeInsets.only(right: 16),
-                                child: Stack(
-                                    children: [
-                                      Container(
-                                        width: 200,
-                                        decoration: BoxDecoration(
-                                          color: Colors.black38,
-                                        ),
-                                      )
-                                    ]
-                                )
-                            );
+                            return BoxCategory3();
                           }
                       )
                   )
@@ -230,6 +213,53 @@ class sportsWidget extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class viewBox extends StatelessWidget {
+  const viewBox({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image(
+            image: AssetImage(
+                'images/widget_images/16.png'
+            ),
+            fit: BoxFit.fitHeight,
+          ),
+          Text(
+            'Aritficial Inteliigence to be used for good Gover',
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'LibreFranklin',
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+            ),
+            maxLines: 2,),
+          SizedBox(height: 10,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ImageIcon(
+                  AssetImage('images/icons/three dots.png'))
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 15.0, bottom: 30.0),
+            width: 330,
+            child: Divider(
+              height: 1,
+              thickness: 1,
+              color: Colors.grey[500],
+            ),
+          ),
+        ]
     );
   }
 }
@@ -248,30 +278,22 @@ class cardWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ...data.map((val) {
-                      return Container(
-                        margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                        width: 398.0,
-                        height: 140.0,
-                        decoration: BoxDecoration(
-                          color: Colors.black38,
-                        ),
-                      );
+                      return viewBox();
                     }),
                   ]
               ),
               Text('Latest Technology',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
-              SizedBox(height: 10.0,),
               Column(
                 children: [
                   ...data.map((val) {
                     return Card(
-                      color: Colors.black12,
+                      color: Colors.transparent,
                       elevation: 0.0,
                       margin: EdgeInsets.only(bottom: 20.0),
                       child: Padding(
@@ -284,11 +306,9 @@ class cardWidget extends StatelessWidget {
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    'images/icons/home outline.png',
+                                    'images/widget_images/7.png',
                                   ),
-                                  fit: BoxFit.cover,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
 
                               ),
                             ),
@@ -298,15 +318,17 @@ class cardWidget extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Title here",
+                                  Text("Beaumont hospitals adding more bots",
                                     style: TextStyle(
-                                      fontSize: 18.0,
-                                    ),),
+                                      fontSize: 17.0,
+                                    ),
+                                  maxLines: 2,
+                                  ),
                                   SizedBox(height: 5.0,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Icon(Icons.add),
+                                      ImageIcon(AssetImage('images/icons/three dots.png')),
                                     ],
                                   )
                                 ],

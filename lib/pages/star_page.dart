@@ -48,27 +48,26 @@ class _StarPageState extends State<StarPage> {
           ),
           body: SingleChildScrollView(
             child: Container(
-              margin: EdgeInsets.only(top: 10.0),
+              margin: EdgeInsets.only(right: 10.0),
+              padding: EdgeInsets.all(10.0),
               child: Column(
                 children: [
                   ...data.map((val) {
                     return Card(
+                      elevation: 0.0,
                         color: Colors.white,
                         child: Column(
                             children: [
                               Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Container(
-                                      padding: EdgeInsets.all(10.0),
-                                      margin: EdgeInsets.all(10.0),
-                                      height: 55.0,
-                                      width: 82.0,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.grey,
+                                    CircleAvatar(
+                                      radius: 30,
+                                      child: Image(
+                                        image: AssetImage('images/widget_images/43.png'),
                                       ),
                                     ),
+                                    SizedBox(width: 10.0,),
                                     Column(
                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +82,7 @@ class _StarPageState extends State<StarPage> {
                                           style: TextStyle(
                                             fontWeight: FontWeight.w200,
                                             fontSize: 10,
-                                          ),)
+                                          ),),
                                       ],
                                     )
                                   ]

@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               Text('Trending News',
                 style: TextStyle(
                   fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontFamily: 'LibreFranklin',
                 ),),
               SizedBox(height: 10.0,),
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               Text('Viral Updates',
                 style: TextStyle(
                   fontSize: 18.0,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontFamily: 'LibreFranklin',
                 ),
               ),
@@ -87,16 +87,18 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Container(
-                      height: 87.0,
+                      height: 120.0,
                       child: ListView.builder(
                           itemCount: 5,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return BoxCategory2();
+                            return InkWell(
+                                child: BoxCategory2()
+                            );
                           }
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -105,7 +107,7 @@ class _HomePageState extends State<HomePage> {
 
               Text('Recommended Topics',
                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontSize: 18,
                   fontFamily: 'LibreFranklin',
                 ),),
@@ -116,13 +118,13 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Container(
-                        height: 266.0,
+                        height: 250.0,
                         child: ListView.builder(
                           itemCount: 5,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
-                            return BoxCategory3();
+                            return InkWell(child: BoxCategory3());
                           },
                         ),
                       ),
@@ -130,12 +132,12 @@ class _HomePageState extends State<HomePage> {
                   )
               ),
 
-              SizedBox(height: 20.0),
+              SizedBox(height: 35.0),
 
               Text('Browse Channels',
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   fontFamily: 'LibreFranklin',
                 ),),
               Container(
@@ -153,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       )
                     ],
-                  )
+                  ),
               ),
             ],
           ),
@@ -171,12 +173,12 @@ class CircularBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(2),
       margin: EdgeInsets.only(right: 10.0),
       child: CircleAvatar(
-        backgroundImage: AssetImage('images/widget_images/5.png'),
-        radius: 40.0,
-
-      )
+        backgroundImage: AssetImage('images/widget_images/9.png'),
+        radius: 36.0,
+      ),
     );
   }
 }
@@ -201,7 +203,7 @@ class BoxCategory1 extends StatelessWidget {
               ),
               fit: BoxFit.fitHeight,
             ),
-              Text('this is the lastest news as in api reffered',
+              Text('Aritficial Inteliigence to be used for good Gover',
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'LibreFranklin',
@@ -227,22 +229,24 @@ class BoxCategory2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 14),
-      child: Column(
-              children: [
-                Image(
-                image: AssetImage('images/widget_images/2.png'),
-                  fit: BoxFit.fitHeight,
-                ),
-                Text('api news here',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'LibreFranklin',
-                    fontSize: 4,
-                    fontWeight: FontWeight.w400,
+      child: Container(
+        child: Column(
+                children: [
+                  Image(
+                  image: AssetImage('images/widget_images/2.png'),
+                    fit: BoxFit.fitHeight,
                   ),
-                maxLines: 1,
-                ),
-              ]
+                  Text('Local Train',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'LibreFranklin',
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  maxLines: 1,
+                  ),
+                ]
+        ),
       ),
     );
   }
@@ -258,19 +262,18 @@ class BoxCategory3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 12),
-      child: Stack(
-        children: [
-          Container(
+          child: Container(
             height: 188,
             width: 160,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image(
                   image: AssetImage(
                     'images/widget_images/6.png',
                   ),
               ),
-                Text('Text here',
+                Text('Portrait Photography For Charity',
                   style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'LibreFranklin',
@@ -278,28 +281,34 @@ class BoxCategory3 extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),),
                 SizedBox(
-                  height: 43,
+                  height: 10,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text('Text here',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'LibreFranklin',
-                      fontSize: 10,
-                      fontWeight: FontWeight.w200,
-                    ),),
-                  // ElevatedButton(onPressed: (){},
-                  //     child: Text('Follow')
-                  // )
-                ],
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Social Work',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'LibreFranklin',
+                        fontSize: 10,
+                        fontWeight: FontWeight.w200,
+                      ),),
+                    RaisedButton(
+                      onPressed: (){},
+                      child: Text('Follow +',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),),
+                      color: Colors.grey,
+                      elevation: 0.0,
+                      splashColor: Colors.black12,
+                    )
+                  ],
                 )
               ]
             ),
           ),
-        ],
-      ),
     );
   }
 }
