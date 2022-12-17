@@ -152,6 +152,7 @@ class _EditProfileState extends State<EditProfile> {
                 SizedBox(
                   height: 40.0,
                   child: TextField(
+                    keyboardType: TextInputType.emailAddress,
                     cursorColor: Colors.black12,
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
@@ -186,7 +187,7 @@ class _EditProfileState extends State<EditProfile> {
                           child: TextField(
                             keyboardType: TextInputType.number,
                             cursorColor: Colors.black12,
-                            //maxLength: 2,
+                            // maxLength: 2,
                             decoration: InputDecoration(
                               hintText: "DD",
                               focusedBorder: OutlineInputBorder(

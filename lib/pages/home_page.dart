@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:e_patrakar/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -53,7 +55,9 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         children: [
                           for(int i = 0; i < _itemCount; i++)
-                            BoxCategory1(),
+                            InkWell(
+                              onTap: ()=>Navigator.pushNamed(context, MyRoutes.home_detail_page),
+                              child: BoxCategory1(),)
                         ],
                       ),
                     ),
@@ -293,16 +297,20 @@ class BoxCategory3 extends StatelessWidget {
                         fontSize: 10,
                         fontWeight: FontWeight.w200,
                       ),),
-                    RaisedButton(
-                      onPressed: (){},
-                      child: Text('Follow +',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),),
-                      color: Colors.grey,
-                      elevation: 0.0,
-                      splashColor: Colors.black12,
+                    InkWell(
+                      onTap: (){},
+                      splashColor: Colors.grey,
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 25.83,
+                        width: 70.11,
+                        color: Colors.black,
+                        child: Text('Follow+',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10.0,
+                        ),),
+                      ),
                     )
                   ],
                 )
