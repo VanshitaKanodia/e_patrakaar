@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:e_patrakar/pages/view_page.dart';
 import 'package:e_patrakar/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -15,6 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _itemCount = 5;
   final _controller = PageController();
+  List<int> data = [1,2,3];
 
   @override
   Widget build(BuildContext context) {
@@ -31,25 +33,24 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(left: 12, right: 15, top: 5, bottom: 5),
+        child: Container(
+          padding: EdgeInsets.only(top: 16, right: 16, left: 16, bottom: 13),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Trending News',
                 style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
-              SizedBox(height: 10.0,),
+              SizedBox(height: 10.31,),
               Container(
                 child: Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
-                      height: 150.0,
+                      height: 165.0,
                       child: PageView(
                         controller: _controller,
                         scrollDirection: Axis.horizontal,
@@ -75,12 +76,12 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 27.0),
 
               Text('Viral Updates',
                 style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),
               ),
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Container(
-                      height: 120.0,
+                      height: 101.78,
                       child: ListView.builder(
                           itemCount: 5,
                           scrollDirection: Axis.horizontal,
@@ -107,12 +108,12 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 28),
 
               Text('Recommended Topics',
                 style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 24,
                   fontFamily: 'LibreFranklin',
                 ),),
 
@@ -122,13 +123,15 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Container(
-                        height: 250.0,
+                        height: 281.0,
                         child: ListView.builder(
-                          itemCount: 5,
+                          itemCount: 2,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
-                            return InkWell(child: BoxCategory3());
+                            return InkWell(
+                                child: BoxCategory3()
+                            );
                           },
                         ),
                       ),
@@ -136,19 +139,24 @@ class _HomePageState extends State<HomePage> {
                   )
               ),
 
-              SizedBox(height: 35.0),
+              SizedBox(height: 38.59),
+
+              viewBox(),
+
+              SizedBox(height: 30,),
 
               Text('Browse Channels',
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
               Container(
+                margin: EdgeInsets.only(top: 8.77),
                   child: Column(
                     children: [
                       Container(
-                        height: 100.0,
+                        height: 84.57,
                         child: ListView.builder(
                           itemCount: 4,
                           shrinkWrap: true,
@@ -161,6 +169,19 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
               ),
+              SizedBox(height: 31.99,),
+              Column(
+                children: [
+                  ...data.map((val) {
+                    return Container(
+                      width: 396.0,
+                      height: 280.0,
+                      child: viewBox(),
+                    );
+                  }),
+                ],
+              )
+
             ],
           ),
         ),
@@ -177,11 +198,12 @@ class CircularBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(2),
-      margin: EdgeInsets.only(right: 10.0),
+      // padding: EdgeInsets.all(0),
+      margin: EdgeInsets.only(right: 19.9),
       child: CircleAvatar(
-        backgroundImage: AssetImage('images/widget_images/9.png'),
-        radius: 36.0,
+        backgroundImage: AssetImage('images/widget_images/9.png',),
+        radius: 42.28,
+        backgroundColor: Colors.transparent,
       ),
     );
   }
@@ -207,11 +229,11 @@ class BoxCategory1 extends StatelessWidget {
               ),
               fit: BoxFit.fitHeight,
             ),
-              Text('Aritficial Inteliigence to be used for good Gover',
+              Text('Aritficial Inteliigence to be used for good Gover...',
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: 'LibreFranklin',
-                fontSize: 17,
+                fontSize: 14,
                 fontWeight: FontWeight.w400,
               ),
               maxLines: 1,)
@@ -232,13 +254,15 @@ class BoxCategory2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 14),
+      margin: EdgeInsets.only(right: 19.9),
       child: Container(
         child: Column(
                 children: [
                   Image(
                   image: AssetImage('images/widget_images/2.png'),
                     fit: BoxFit.fitHeight,
+                    height: 84.57,
+                    width: 84.57,
                   ),
                   Text('Local Train',
                     style: TextStyle(
@@ -265,18 +289,32 @@ class BoxCategory3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 12),
-          child: Container(
-            height: 188,
-            width: 160,
-            child: Column(
+        margin: EdgeInsets.only(right: 20.62),
+        child: Container(
+          height: 188,
+          width: 189,
+          margin: const EdgeInsets.only(bottom: 5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0.0, 1.0), //(x,y)
+                blurRadius: 6.0,
+              ),
+            ],
+          ),
+          child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image(
+                  height: 188,
+                  width: 189,
                   image: AssetImage(
                     'images/widget_images/6.png',
                   ),
-              ),
+                ),
+                SizedBox(height: 4,),
                 Text('Portrait Photography For Charity',
                   style: TextStyle(
                     color: Colors.black,
@@ -285,7 +323,7 @@ class BoxCategory3 extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),),
                 SizedBox(
-                  height: 10,
+                  height: 43,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -297,6 +335,7 @@ class BoxCategory3 extends StatelessWidget {
                         fontSize: 10,
                         fontWeight: FontWeight.w200,
                       ),),
+                    SizedBox(width: 61.83,),
                     InkWell(
                       onTap: (){},
                       splashColor: Colors.grey,
@@ -306,17 +345,17 @@ class BoxCategory3 extends StatelessWidget {
                         width: 70.11,
                         color: Colors.black,
                         child: Text('Follow+',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.0,
-                        ),),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10.0,
+                          ),),
                       ),
                     )
                   ],
                 )
               ]
-            ),
           ),
-    );
+        ),
+      );
   }
 }

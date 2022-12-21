@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
 
 
 class ViewPage extends StatefulWidget {
@@ -26,14 +25,7 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
           fontWeight: FontWeight.w400,
           color: Colors.black,
         ))),
-    Tab(child: Text("Entertainment",
-        style: TextStyle(
-          fontSize: 17,
-          fontFamily: 'LibreFranklin',
-          fontWeight: FontWeight.w400,
-          color: Colors.black,
-        ))),
-    Tab(child: Text("Science",
+    Tab(child: Text("Politics",
         style: TextStyle(
           fontSize: 17,
           fontFamily: 'LibreFranklin',
@@ -41,6 +33,13 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
           color: Colors.black,
         ))),
     Tab(child: Text("Technology",
+        style: TextStyle(
+          fontSize: 17,
+          fontFamily: 'LibreFranklin',
+          fontWeight: FontWeight.w400,
+          color: Colors.black,
+        ))),
+    Tab(child: Text("Science",
         style: TextStyle(
           fontSize: 17,
           fontFamily: 'LibreFranklin',
@@ -97,7 +96,7 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
             children: [
               //Sports page
               Padding(
-                padding: EdgeInsets.all(0.0),
+                padding: EdgeInsets.only(top: 45.2),
                 child: Expanded(
                     child: sportsWidget()
                 ),
@@ -143,7 +142,7 @@ class _ViewPageState extends State<ViewPage> with SingleTickerProviderStateMixin
 }
 
 
-List<int> data = [1, 2, 3, 4, 5];
+List<int> data = [1, 2];
 List<int> view = [1, 2, 3, 4];
 
 class sportsWidget extends StatelessWidget {
@@ -152,66 +151,130 @@ class sportsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          children: [
+        padding: EdgeInsets.only(right: 16, left: 16, bottom: 35.24),
+        child:
             Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ...data.map((val) {
                     return Container(
                       width: 398.0,
-                      height: 220.0,
+                      height: 280.0,
                       child: viewBox(),
                     );
                   }),
+                  SizedBox(height: 38,),
                   Text('Top Five',
                     style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w300,
                     ),),
                   Container(
-                      child: Column(
+                    margin: EdgeInsets.only(top: 9),
+                      child: Row(
                         children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            height: 100.0,
-                            child: ListView.builder(
-                              itemCount: 5,
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                return CircularBox();
-                              },
-                            ),
-                          )
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Pro Kabaddi',
+                              style: TextStyle(
+                                fontFamily: 'LibreFranklin',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12,
+                              ),),
+                              for(int i=1;i<=5;i++)
+                                Row(
+                                  children: [
+                                    Text('$i'),
+                                    Container(
+                                      padding: EdgeInsets.only(bottom: 4.79),
+                                      child: Image(
+                                        height: 41.94,
+                                          width: 41.94,
+                                          image: AssetImage(
+                                        'images/widget_images/18.png',
+                                      )),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Dabang Delhi',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w500,
+                                            fontFamily: 'LibreFranklin',
+                                            color: Colors.black,
+                                          ),),
+                                        Text('India',
+                                        style: TextStyle(
+                                          fontFamily: 'Librefranklin',
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 9,
+                                          color: Color(0xFF999595),
+                                        ),)
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                            ],
+                          ),
+                          SizedBox(width: 81,),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('NBA',
+                                style: TextStyle(
+                                  fontFamily: 'LibreFranklin',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),),
+                              for(int i=1;i<=5;i++)
+                                Row(
+                                  children: [
+                                    Text('$i'),
+                                    Container(
+                                      padding: EdgeInsets.only(bottom: 4.79),
+                                      child: Image(
+                                          height: 41.94,
+                                          width: 41.94,
+                                          image: AssetImage(
+                                            'images/widget_images/23.png',
+                                          )),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Atlanta Hawks',
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w500,
+                                            fontFamily: 'LibreFranklin',
+                                            color: Colors.black,
+                                          ),),
+                                        Text('America',
+                                          style: TextStyle(
+                                            fontFamily: 'Librefranklin',
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 9,
+                                            color: Color(0xFF999595),
+                                          ),)
+                                      ],
+                                    ),
+                                  ],
+                                ),
+
+                            ],
+                          ),
                         ],
                       )
                   ),
-                  SizedBox(height: 20.0,),
-                  Text('Recommended Teams',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),),
-                  SizedBox(height: 10.0,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5),
-                      height: 270.0,
-                      child: ListView.builder(
-                        //length of items used
-                          itemCount: 6,
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return BoxCategory3();
-                          }
-                      )
-                  )
+                  SizedBox(height: 38.35,),
+                 ...data.map((val)
+                 {
+                   return viewBox();
+                 })
                 ]
             ),
-          ],
-        ),
       ),
     );
   }
@@ -224,42 +287,54 @@ class viewBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image(
-            image: AssetImage(
-                'images/widget_images/16.png'
+    return Container(
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image(
+              height: 140.94,
+              width: 396,
+              image: AssetImage(
+                  'images/widget_images/16.png'
+              ),
+              fit: BoxFit.fitHeight,
             ),
-            fit: BoxFit.fitHeight,
-          ),
-          Text(
-            'Aritficial Inteliigence to be used for good Gover',
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'LibreFranklin',
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
+            SizedBox(height: 8.72,),
+            Text(
+              'Aritficial Inteliigence to be used for good Gover',
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: 'LibreFranklin',
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+              ),
+              maxLines: 2,),
+            SizedBox(height: 25,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Festivals.2 days ago',
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w200,
+                  fontFamily: 'LibreFranklin',
+                  color: Colors.black
+                ),),
+                ImageIcon(
+                    AssetImage('images/icons/three dots.png'))
+              ],
             ),
-            maxLines: 2,),
-          SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              ImageIcon(
-                  AssetImage('images/icons/three dots.png'))
-            ],
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 15.0, bottom: 30.0),
-            width: 330,
-            child: Divider(
-              height: 1,
-              thickness: 1,
-              color: Colors.grey[500],
+            Container(
+              margin: EdgeInsets.only(top: 5.0, bottom: 30.0),
+              width: 397,
+              child: Divider(
+                height: 1,
+                thickness: 1,
+                color: Colors.grey[500],
+              ),
             ),
-          ),
-        ]
+          ]
+      ),
     );
   }
 }
@@ -271,17 +346,12 @@ class cardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(left: 16, right: 16),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ...data.map((val) {
-                      return viewBox();
-                    }),
-                  ]
-              ),
+              viewBox(),
+              SizedBox(height: 35,),
               Text('Latest Technology',
                 style: TextStyle(
                   color: Colors.black,
@@ -289,62 +359,58 @@ class cardWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontFamily: 'LibreFranklin',
                 ),),
-              Column(
-                children: [
-                  ...data.map((val) {
-                    return Card(
-                      color: Colors.transparent,
-                      elevation: 0.0,
-                      margin: EdgeInsets.only(bottom: 20.0),
-                      child: Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: 120.0,
-                              height: 120.0,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'images/widget_images/7.png',
-                                  ),
-                                ),
-
-                              ),
-                            ),
-                            SizedBox(width: 5.0),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Beaumont hospitals adding more bots",
-                                    style: TextStyle(
-                                      fontSize: 17.0,
-                                    ),
-                                  maxLines: 2,
-                                  ),
-                                  SizedBox(height: 5.0,),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      ImageIcon(AssetImage('images/icons/three dots.png')),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
+              SizedBox(height: 23.39,),
+              ...view.map((val)
+              {
+                return Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: 19.11, right: 12.43),
+                        child: Image(
+                          width: 150.5,
+                          height: 117.02,
+                          image: AssetImage(
+                            'images/widget_images/34.png',
+                          ),
                         ),
                       ),
-                    );
-                  }
-                  )
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                              Text('Using',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'Librefranklin',
+                                ),
+                                maxLines: 2,),
+                              SizedBox(height: 57,),
+                              Row(
+                                children: const [
+                                  Text('Technology.1 hour ago',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w200,
+                                      fontSize: 10,
+                                      color: Color(0xFF020000),
+                                    ),),
+                                  // SizedBox(width: 65,),
+                                  ImageIcon(
+                                    AssetImage('images/icons/three dots.png'),
+                                    size: 28,),
+                                ],
+                              ),
+                        ],
+                      ),
+                    ],
+                  );
+              }),
+              ...data.map((val)
+              {
+                return viewBox();
+              })
                 ],
               )
-            ]
-        )
-    );
+        );
   }
 }
 

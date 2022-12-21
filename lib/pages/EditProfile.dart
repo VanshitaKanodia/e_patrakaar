@@ -1,15 +1,21 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
+import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({ Key? key }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _EditProfileState createState() => _EditProfileState();
 }
 
 class _EditProfileState extends State<EditProfile> {
+final countryPicker = const FlCountryCodePicker();
+CountryCode? countrycode;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -329,34 +335,71 @@ class _EditProfileState extends State<EditProfile> {
                   height: 40.0,
                   child: Row(
                       children: [
-                        SizedBox(
-                          width: 40.0,
-                          child: TextField(
-                            keyboardType: TextInputType.number,
-                            cursorColor: Colors.black12,
-                            //maxLength: 2,
-                            decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
+                        GestureDetector(
+                          onTap: () async {
+                            final code =
+                             await countryPicker.showPicker(context: context);
+                            setState(() {
+                              countrycode = code;
+                            });
+                          },
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(right: 10),
+                                child: countrycode != null ? countrycode!.flagImage : null,
                               ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
+                              Container(
+                              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(5),
                               ),
-                              contentPadding: EdgeInsets.only(left: 10),
-                            ),
-                          ),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.expand_more_outlined,
+                                    size: 12,
+                                    color: Colors.white,),
+                                    Text('+91',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12
+                                    ),)
+                                  ],
+                                )
                         ),
+                            ],
+                          ),),
+                        // SizedBox(
+                        //   width: 40.0,
+                        //   child: TextField(
+                        //     keyboardType: TextInputType.number,
+                        //     cursorColor: Colors.black12,
+                        //     //maxLength: 2,
+                        //     decoration: InputDecoration(
+                        //       focusedBorder: OutlineInputBorder(
+                        //         borderSide: BorderSide(
+                        //           color: Colors.black,
+                        //         ),
+                        //         borderRadius: BorderRadius.circular(8.0),
+                        //       ),
+                        //       enabledBorder: OutlineInputBorder(
+                        //         borderSide: BorderSide(
+                        //           color: Colors.black,
+                        //         ),
+                        //         borderRadius: BorderRadius.circular(8.0),
+                        //       ),
+                        //       contentPadding: EdgeInsets.only(left: 10),
+                        //     ),
+                        //   ),
+                        // ),
                         SizedBox(
                           width: 10.0,
                         ),
                         SizedBox(
-                          width: 280.0,
+                          width: 161.0,
                           child: TextField(
                             keyboardType: TextInputType.number,
                             //maxLength: 2,

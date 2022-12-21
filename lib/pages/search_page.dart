@@ -42,7 +42,7 @@ class _SearchPageState extends State<SearchPage> {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.black12,
+                    color: Colors.black12,
                     ),
                     borderRadius: BorderRadius.circular(40.0),
                   ),
