@@ -25,9 +25,9 @@ CountryCode? countrycode;
         backgroundColor: Colors.white,
         title: Text('My Account',
           style: TextStyle(
-            fontFamily: 'ElMessiri',
-            fontWeight: FontWeight.w700,
-            fontSize: 24,
+            fontFamily: 'LibreFranklin',
+            fontWeight: FontWeight.w500,
+            fontSize: 18,
             color: Colors.black,
           ),),
       ),
@@ -39,8 +39,8 @@ CountryCode? countrycode;
                   child: Stack(
                       children: [
                         Container(
-                          height: 100,
-                          width: 100,
+                          height: 100.98,
+                          width: 100.98,
                           decoration: BoxDecoration(
                               color: Colors.grey,
                               shape: BoxShape.circle,
@@ -117,15 +117,20 @@ CountryCode? countrycode;
                       ]
                   ),
                 ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                SizedBox(
-                    height: 20.0
-                ),
+                // SizedBox(
+                //   height: 5.0,
+                // ),
+                // SizedBox(
+                //     height: 20.0
+                // ),
                 Container(
-                  child: Text("Name"),
-                  margin: EdgeInsets.only(bottom: 5.0),
+                  child: Text("Name",
+                  style: TextStyle(
+                    fontFamily: 'LibreFranklin',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 17,
+                  ),),
+                  margin: EdgeInsets.only(bottom: 12.0, top: 38.88),
                 ),
                 SizedBox(
                   height: 40.0,
@@ -149,10 +154,15 @@ CountryCode? countrycode;
                   ),
                 ),
                 SizedBox(
-                    height: 15.0
+                    height: 16.0
                 ),
                 Container(
-                  child: Text("E-mail"),
+                  child: Text("E-mail",
+                    style: TextStyle(
+                      fontFamily: 'LibreFranklin',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17,
+                    ),),
                   margin: EdgeInsets.only(bottom: 5.0),
                 ),
                 SizedBox(
@@ -181,7 +191,12 @@ CountryCode? countrycode;
                     height: 15.0
                 ),
                 Container(
-                  child: Text("Date"),
+                  child: Text("Date of Birth",
+                    style: TextStyle(
+                      fontFamily: 'LibreFranklin',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17,
+                    ),),
                   margin: EdgeInsets.only(bottom: 5.0),
                 ),
                 SizedBox(
@@ -273,7 +288,12 @@ CountryCode? countrycode;
                     height: 15.0
                 ),
                 Container(
-                  child: Text("Gender"),
+                  child: Text("Gender",
+                    style: TextStyle(
+                      fontFamily: 'LibreFranklin',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17,
+                    ),),
                   margin: EdgeInsets.only(bottom: 5.0),
                 ),
                 Row(
@@ -328,11 +348,17 @@ CountryCode? countrycode;
                     height: 15.0
                 ),
                 Container(
-                  child: Text("Mobile"),
+                  child: Text("Contact Number",
+                    style: TextStyle(
+                      fontFamily: 'LibreFranklin',
+                      fontWeight: FontWeight.w500,
+                      fontSize: 17,
+                    ),),
                   margin: EdgeInsets.only(bottom: 5.0),
                 ),
                 SizedBox(
-                  height: 40.0,
+                  height: 30.0,
+                  width: 60,
                   child: Row(
                       children: [
                         GestureDetector(
@@ -346,55 +372,36 @@ CountryCode? countrycode;
                           child: Row(
                             children: [
                               Container(
-                                padding: EdgeInsets.only(right: 10),
-                                child: countrycode != null ? countrycode!.flagImage : null,
-                              ),
-                              Container(
-                              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  border: Border.all(),
+                                  borderRadius: BorderRadius.circular(7),
+                                ),
+                                height: 40,
+                                width: 78,
                                 child: Row(
                                   children: [
+                                    Flexible(
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child: countrycode != null ? countrycode!.flagImage : null,
+                                      ),
+                                    ),
                                     Icon(Icons.expand_more_outlined,
-                                    size: 12,
-                                    color: Colors.white,),
-                                    Text('+91',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12
-                                    ),)
+                                      size: 20,
+                                      color: Colors.black,
+                                    ),
+                                    Text(
+                                      countrycode != null ? countrycode!.dialCode : "",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 13
+                                      ),)
                                   ],
-                                )
-                        ),
+                                ),
+                              ),
                             ],
                           ),),
-                        // SizedBox(
-                        //   width: 40.0,
-                        //   child: TextField(
-                        //     keyboardType: TextInputType.number,
-                        //     cursorColor: Colors.black12,
-                        //     //maxLength: 2,
-                        //     decoration: InputDecoration(
-                        //       focusedBorder: OutlineInputBorder(
-                        //         borderSide: BorderSide(
-                        //           color: Colors.black,
-                        //         ),
-                        //         borderRadius: BorderRadius.circular(8.0),
-                        //       ),
-                        //       enabledBorder: OutlineInputBorder(
-                        //         borderSide: BorderSide(
-                        //           color: Colors.black,
-                        //         ),
-                        //         borderRadius: BorderRadius.circular(8.0),
-                        //       ),
-                        //       contentPadding: EdgeInsets.only(left: 10),
-                        //     ),
-                        //   ),
-                        // ),
                         SizedBox(
                           width: 10.0,
                         ),
@@ -436,6 +443,7 @@ CountryCode? countrycode;
                         padding: EdgeInsets.all(10.0),
                         textStyle: TextStyle(
                             color: Colors.white, fontSize: 15.0),
+                        primary: Colors.black,
                       ),
                     ),
                   ],

@@ -34,8 +34,8 @@ class _StarPageState extends State<StarPage> {
               child: Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 25.0),
-                    child: Text('Notifications',
+                    padding: EdgeInsets.only(left: 24.0),
+                    child: Text('Notification',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -48,13 +48,12 @@ class _StarPageState extends State<StarPage> {
           ),
           body: SingleChildScrollView(
             child: Container(
-              margin: EdgeInsets.only(right: 10.0),
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.only(left: 16.79, right: 16.79, top: 12.74),
               child: Column(
                 children: [
                   ...data.map((val) {
                     return Card(
-                      elevation: 0.0,
+                        elevation: 0.0,
                         color: Colors.white,
                         child: Column(
                             children: [
@@ -62,26 +61,33 @@ class _StarPageState extends State<StarPage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     CircleAvatar(
-                                      radius: 30,
+                                      radius: 32,
                                       child: Image(
-                                        image: AssetImage('images/widget_images/43.png'),
+                                        image: AssetImage(
+                                            'images/widget_images/43.png'),
                                       ),
                                     ),
-                                    SizedBox(width: 10.0,),
+                                    SizedBox(width: 36.78),
                                     Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .spaceEvenly,
+                                      crossAxisAlignment: CrossAxisAlignment
+                                          .start,
                                       children: [
                                         Text('Add text here',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: 16,
+                                            fontFamily: 'LibreFranklin',
                                             fontWeight: FontWeight.w500,
-                                          ),),
+                                          ),
+                                          maxLines: 1,),
                                         SizedBox(height: 10.0,),
                                         Text('Add subtitle here',
                                           style: TextStyle(
                                             fontWeight: FontWeight.w200,
                                             fontSize: 10,
+                                            fontFamily: 'Librefranklin',
+                                            color: Color(0xFF000000),
                                           ),),
                                       ],
                                     )
@@ -90,7 +96,8 @@ class _StarPageState extends State<StarPage> {
                             ]
                         )
                     );
-                  })
+                  }
+                  ),
                 ],
               ),
             ),

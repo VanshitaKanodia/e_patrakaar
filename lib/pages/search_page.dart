@@ -34,23 +34,37 @@ class _SearchPageState extends State<SearchPage> {
           ),
         ),
         body: Container(
-          margin: EdgeInsets.only(top: 10.0),
-          padding: EdgeInsets.all(10),
+          // margin: EdgeInsets.only(top: 23.0),
+          padding: EdgeInsets.only(left: 23, right: 23),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                    color: Colors.black12,
+              Container(
+                height: 44,
+                width: 379,
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                      color: Colors.black12,
+                      ),
+                      borderRadius: BorderRadius.circular(40.0),
                     ),
-                    borderRadius: BorderRadius.circular(40.0),
+                    hintText: "Search news",
+                    suffixIcon: ImageIcon(AssetImage('images/icons/search.png',),
+                    size: 28,
+                    ),
                   ),
-                  hintText: "Search news",
-                  suffixIcon: ImageIcon(AssetImage('images/icons/search.png')),
                 ),
               ),
-              SizedBox(height: 10.0,),
+              SizedBox(height: 44.0,),
+              Text('Top Cities',
+              style: TextStyle(
+                fontFamily: 'Librefranklin',
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),),
+              SizedBox(height: 14.06),
               CityWidget(),
               SizedBox(height: 10.0,),
               Container(
@@ -97,12 +111,12 @@ class CityWidget extends StatelessWidget {
       children: [
         ...data.map((val) {
           return Container(
-            margin: EdgeInsets.only(right: 5.0),
+            margin: EdgeInsets.only(right: 8.0),
             child: CircleAvatar(
               child: Image(
                 image: AssetImage('images/widget_images/41.png'),
               ),
-              radius: 40,
+              radius: 35,
             )
           );
         }),
