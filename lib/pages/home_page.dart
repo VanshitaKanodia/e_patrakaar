@@ -66,16 +66,8 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           for (int i = 0; i < _itemCount; i++)
                             InkWell(
-                              //  onTap: ()=>Navigator.pushNamed(context, MyRoutes.home_detail_page),
-                              onTap: () {
-                                setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => TestPage()));
-                                });
-                              },
-
+                                onTap: ()=>Navigator.pushNamed(context, MyRoutes.home_detail_page),
+                         
                               child: BoxCategory1(),
                             )
                         ],
