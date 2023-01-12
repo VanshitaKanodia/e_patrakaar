@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:e_patrakar/pages/testPage.dart';
 import 'package:e_patrakar/pages/view_page.dart';
-import 'package:e_patrakar/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -57,7 +57,13 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           for(int i = 0; i < _itemCount; i++)
                             InkWell(
-                              onTap: ()=>Navigator.pushNamed(context, MyRoutes.home_detail_page),
+                              // onTap: ()=>Navigator.pushNamed(context, MyRoutes.home_detail_page),
+                              onTap: (){
+                                setState(() {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => TestPage())
+                                      );
+                                });
+              },
                               child: BoxCategory1(),)
                         ],
                       ),

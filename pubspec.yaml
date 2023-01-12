@@ -50,7 +50,7 @@ dev_dependencies:
   dots_indicator: ^2.1.0
   smooth_page_indicator: ^1.0.0+2
   fl_country_code_picker: ^0.0.4
-
+  http: ^0.13.5
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

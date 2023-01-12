@@ -20,7 +20,12 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 35, 6, 6)
       ),
-      home:const BottomBar()
+      home: const BottomBar(),
+      // const LoginPage(),
+
+
+
+
       //initialRoute: '/bottom',
     //   routes: {
     //     '/home_page': (context) => HomePage(),
